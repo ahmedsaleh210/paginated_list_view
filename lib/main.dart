@@ -54,9 +54,14 @@ class _PaginationScreenState extends State<PaginationScreen> {
         );
       },
       onEmpty: const Text('List is Empty'),
+      onEnd: const Center(
+          child: Text(
+        'End of List',
+        style: TextStyle(fontSize: 25, color: Colors.red),
+      )),
       initialLoader: const CircularProgressIndicator(color: Colors.red),
       bottomLoader: const CircularProgressIndicator(color: Colors.yellow),
-      maxRows: 15,
+      maxRows: 10,
       onPageChanged: (pageNumber, maxRows) async =>
           await loadData(pageNumber: pageNumber, maxRows: maxRows),
     ));
@@ -101,3 +106,9 @@ class PostModel {
       //     },
       //   );
       // },
+
+      //     onEnd: const Center(
+      //     child: Text(
+      //   'End of List',
+      //   style: TextStyle(fontSize: 25, color: Colors.red),
+      // )),
